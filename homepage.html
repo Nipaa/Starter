@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" 
+      type="image/png" 
+      href="http://a.pomf.se/noztsj.png">
+
+		<title>homepage</title>
+		<script src="jquery-2.1.1.min.js"></script>
+	</head>
+
+	<body>
+
+	<script>$(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y > 20) {
+        $('#horizsub') .css({"height":"400px","transition":"all 1s","visibility":"visible","opacity":"1"});
+		$('.secondarynav') .css({"visibility":"visible","opacity":"1","transition":"all 1s"});
+		$('#arrow') .css({"visiblity":"hidden","opacity":"0","transition":"all 1s"});
+		$('.form-wrapper') .css({"visibility":"hidden","opacity":"0","transition":"all 0.5s","top":"-100px"})
+		$('.scrollinfo') .css({"visibility":"visible","opacity":"1"});
+
+    } else {
+        $('#horizsub').css({"height":"45px","transition":"all 1s","visibility":"visible","opacity":"1"});
+		$('.secondarynav') .css({"visibility":"hidden","opacity":"0","transition":"all 1s"});
+		$('#arrow') .css({"visiblity":"visible","opacity":"1","transition":"all 1s"});
+		$('.form-wrapper') .css({"visibility":"visible","opacity":"1","transition":"all 1s","top":"100px"})
+		$('.scrollinfo') .css({"visibility":"hidden","opacity":"0"});
+
+	}
+	
+	if (y > 20) {
+		$('#header') .css({"height":"150px","background-color":"#A3DCA3","transition":"all 1s"});
+		$('.navigation') .css({"bottom":"230px","transition":"all 1s"});
+		}
+		
+	else {
+		$('#header') .css({"height":"280px","background-color":"#79b979","transition":"all 1s"});
+		$('.navigation') .css({"bottom":"150px","transition":"all 1s"});
+		}
+	
+		if (y > 220) {
+		$('#dressing') .css({"visibility":"visible","opacity":"1", "transition":"all 1s"});
+    } else {
+		$('#dressing') .css({"visibility":"hidden","opacity":"0", "transition":"all 1s"});
+    }
+	
+	if (y>300) {
+		$('#thirdfalsebg') .css({"visibility":"visible", "opacity":"1", "width":"100%", "float":"left", "transition":"all 2s"});
+		$('#fashmenu') .css ({"visibility":"visible", "opacity":"1", "transition":"all 2s"})
+	} else {
+		$('#thirdfalsebg') .css({"visibility":"hidden", "opacity":"0", "width":"0", "float":"left", "transition":"all 2s"});
+		$('#fashmenu') .css ({"visibility":"hidden", "opacity":"0", "transition":"all 2s"})
+
+}
+});
+</script>
+
+<div class="falsebg">
+<header id="header">
+		<div class="horiz">
+		<div id="formcontainer"><form class="form-wrapper cf" method="get" action="http://www.google.com/search"/>
+        <input id="search" autofocus  type="text" value="" name="q"   maxlength="255" placeholder="Search here..." required/>
+        <button class="submit" type="submit">Search</button></div>
+    </form> 
+		<div class="navigation">
+			<nav>
+				<ul>
+					<li>
+						<a href="http://4chan.org/">4CHAN</a>
+							<ul>
+								<li><a href="https://boards.4chan.org/a/">/A/</a></li>
+								<li><a href="https://boards.4chan.org/g/">/G/</a></li>
+								<li><a href="https://boards.4chan.org/fa/">/FA/</a>
+								</li></ul></li>
+						<li><a href="http://pomf.se/">POMF</a></li>
+						<li><a href="http://soundcloud.com">SOUNDCLOUD</a>
+						<ul><li><a href="http://soundcloud.com/like">LIKES</a></li></ul></li>
+						<li><a href="http://youtube.com/">YOUTUBE</a></li>
+						<li><a href="http://mikakunin.de/">MIKAKUNIN.DE</a></li></ul></nav></div></div>
+						
+		</header></div>
+		<div class="subcontainer">
+			<div id="horizsub"/>
+			<img id="arrow" src="arrow.png"/>
+					<div class="secondarynav"><nav><ul>
+				<li><a href="http://en.gandi.net/">GANDI</a></li>
+				<li><a href="http://www.nyaa.se/">NYAA</a>
+				<li><a href="https://github.com/">GITHUB</a></li>
+				<li><a href="https://www.wikipedia.org/">WIKIPEDIA</a></li>
+				<li><a href="#">BANK</a></li>
+				<li><a href="http://www.1999.co.jp/eng/">HOBBYSEARCH</a></li>
+				<li><a href="http://www.discogs.com/my">DISCOGS</a></li>
+				<li><a href="http://jpopsuki.eu/index.php">JPOPSUKI</a></li>
+				<li><a href="http://www.realkana.com/">REALKANA</a></li>
+				<li><a href="http://nagomi.ne.jp/">NAGOMI</a></li>
+				<li><a href="http://www.liveleak.com/">LIVELEAK</a></li>
+				<li><a href="#">BANDCAMP</a></li>
+				<li><a href="http://gelbooru.com/index.php?page=post&s=list">GELBOORU</a></li>
+				<li><a href="http://www.pixiv.net/mypage.php/">PIXIV</a></li>
+				<li><a href="http://exhentai.org/">EX</a></li></ul></nav></div></div>
+
+
+			<div class="scrollinfo">
+			<div id="weathercontainer"><div class="weatherelem">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> <script>
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/b145fc38542db704/geolookup/conditions/q/AUSTRALIA/PERTH.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+
+  var location = parsed_json['location']['city'];
+  var temp_c = parsed_json['current_observation']['temp_c'];
+  var wConditions = parsed_json['current_observation']['weather'];
+  var wSwitch = parsed_json['current_observation']['weather'];
+  var tempcSwitch = parsed_json['current_observation']['temp_c'];
+    switch(wSwitch) {
+        
+        case "Drizzle":
+        var icon = "icons/02.png";
+        break;
+
+        case "Light Drizzle":
+        var icon = "icons/02.png";
+        break;
+        
+        case "Heavy Drizzle":
+        var icon = "icons/03.png";
+        break;
+
+        case "Rain":
+        var icon = "icons/03.png";
+        break;
+               
+        case "Light Rain":
+        var icon = "icons/02.png";
+        break;
+        
+        case "Heavy Rain":
+        var icon = "icons/03.png";
+        break;
+
+        case "Partly Cloudy":
+        var icon = "icons/05.png";
+        break;
+
+        case "Mostly Cloudy":
+        var icon = "icons/06.png";
+        break;
+
+        case "Overcast":
+        var icon = "icons/05.png";
+        break;
+
+        case "Clear":
+        var icon = "icons/01.png";
+        break;
+
+        case "Scattered Clouds":
+        var icon = "icons/05.png";
+        break;
+		
+		case "Light Thunderstorms":
+		var icon = "icons/07.png";
+		break;
+		
+		case "Heavy Thunderstorms":
+		var icon = "icons/07.png";
+		break;	
+
+        default:
+        var icon = "icons/01.png";
+
+ }
+ 
+     switch(tempcSwitch) {
+
+		case 1.0: case 1.1: case 1.2: case 1.3: case 1.4: case 1.5: case 1.6: case 1.7: case 1.8: case 1.9:
+		case 2.0: case 2.1: case 2.2: case 2.3: case 2.4: case 2.5: case 2.6: case 2.7: case 2.8: case 2.9:
+		case 3.0: case 3.1: case 3.2: case 3.3: case 3.4: case 3.5: case 3.6: case 3.7: case 3.8: case 3.9:
+		case 4.0: case 4.1: case 4.2: case 4.3: case 4.4: case 4.5: case 4.6: case 4.7: case 4.8: case 4.9:
+		case 5.0: case 5.1: case 5.2: case 5.3: case 5.4: case 5.5: case 5.6: case 5.7: case 5.8: case 5.9:
+		case 6.0: case 6.1: case 6.2: case 6.3: case 6.4: case 6.5: case 6.6: case 6.7: case 6.8: case 6.9:
+		var message = "It's freezing out. Dress Heavy.";
+		break;
+		
+		case 7.0: case 7.1: case 7.2: case 7.3: case 7.4: case 7.5: case 7.6: case 7.7: case 7.8: case 7.9:
+		case 8.0: case 8.1: case 8.2: case 8.3: case 8.4: case 8.5: case 8.6: case 8.7: case 8.8: case 8.9:
+		case 9.0: case 9.1: case 9.2: case 9.3: case 9.4: case 9.5: case 9.6: case 9.7: case 9.8: case 9.9:
+		case 10.0: case 10.1: case 10.2: case 10.3: case 10.4: case 10.5: case 10.6: case 10.7: case 10.8: case 10.9:
+		case 11.0: case 11.1: case 11.2: case 11.3: case 11.4: case 11.5: case 11.6: case 11.7: case 11.8: case 11.9:
+		case 12.0: case 12.1: case 12.2: case 12.3: case 12.4: case 12.5: case 12.6: case 12.7: case 12.8: case 12.9:
+		case 13.0: case 13.1: case 13.2: case 13.3: case 13.4: case 13.5: case 13.6: case 13.7: case 13.8: case 13.9:
+		case 14.0: case 14.1: case 14.2: case 14.3: case 14.4: case 14.5: case 14.6: case 14.7: case 14.8: case 14.9:
+		case 15.0: case 15.1: case 15.2: case 15.3: case 15.4: case 15.5: case 15.6: case 15.7: case 15.8: case 15.9:
+		case 16.0: case 16.1: case 16.2: case 16.3: case 16.4: case 16.5: case 16.6: case 16.7: case 16.8: case 16.9:
+		case 17.0: case 17.1: case 17.2: case 17.3: case 17.4: case 17.5: case 17.6: case 17.7: case 17.8: case 17.9:
+		case 18.0: case 18.1: case 18.2: case 18.3: case 18.4: case 18.5: case 18.6: case 18.7: case 18.8: case 18.9:
+		var message = "Looking cold out. Dress in layers.";
+		break;
+		
+		
+		case 19.0: case 19.1: case 19.2: case 19.3: case 19.4: case 19.5: case 19.6: case 19.7: case 19.8: case 19.9:
+		case 20.0: case 20.1: case 20.2: case 20.3: case 20.4: case 20.5: case 20.6: case 20.7: case 20.8: case 20.9:
+		case 21.0: case 21.1: case 21.2: case 21.3: case 21.4: case 21.5: case 21.6: case 21.7: case 21.8: case 21.9:
+		case 22.0: case 22.1: case 22.2: case 22.3: case 22.4: case 22.5: case 22.6: case 22.7: case 22.8: case 22.9:
+		case 23.0: case 23.1: case 23.2: case 23.3: case 23.4: case 23.5: case 23.6: case 23.7: case 23.8: case 23.9:
+		case 24.0: case 24.1: case 24.2: case 24.3: case 24.4: case 24.5: case 24.6: case 24.7: case 24.8: case 24.9:
+
+		var message = "Getting warm. Dress lightly.";
+		break;
+		
+default:
+var message = "eror. no message specified.";
+ }
+ 
+  //document.write("Current temperature in " + location + " is: " + temp_c + "c");
+  document.getElementById('tempC').innerHTML = temp_c;
+  document.getElementById('wConditions').innerHTML = wConditions;
+  document.getElementById("icon").setAttribute("src", icon)
+  document.getElementById("dressing") .innerHTML = message;
+  }
+  });
+});
+ </script>
+   <div id="wicon"><p class="Wiconsub"> <img id ='icon' src="" /> </p></div>
+   <div id="temp"><p id="tempC"></p></div>
+   <div id="conditions"><p id="wConditions"></p></div>
+ </div>
+ <div id="dresscontainer"><p id="dressing"></p></div></div>
+ <div id="thirdfalsebg"> </div>
+ <div id="thirdmenu">
+ <h1><a href="http://tuxbell.com/">Fashion</a></h1>
+<div id="fashmenu"><ul>
+	<li><a href="http://www.vanishingelephant.com/">VE</a></li>
+	<li><a href="http://www.incuclothing.com/">INCU</a></li>
+	<li><a href="http://www.uptherestore.com/">UTS</a></li>
+	<li><a href="http://shop.comebackkid.com.au/">CBK</a></li>
+	<li><a href="http://www.theannex.com.au/‎">ANNEX</a></li>
+	<li><a href="//http://www.uniqlo.com/au/">UNIQLO</a></li>
+ </div></div>
+</div>
+	</body>
+	
+</html>
